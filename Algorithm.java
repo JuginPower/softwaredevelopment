@@ -2,9 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.school;
+package com.mycompany.school.softwaredevelopment;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,58 +18,44 @@ public class Algorithm {
 
         // Für Array.sort
         int[] intArray1 = new int[]{90, 23, 5, 109, 12, 22, 67, 34};
-        
+
         // Für customSort
         int[] intArray2 = intArray1.clone();
-        
+
         long before = System.nanoTime();
         Arrays.sort(intArray1);
         long duration = System.nanoTime() - before;
-        System.out.println("The Result of Arrays.sort built in:\n"+ Arrays.toString(intArray1));
+        System.out.println("The Result of Arrays.sort built in:\n" + Arrays.toString(intArray1));
         System.out.println("Duration of the Operation in microseconds: " + duration);
-        
+
         before = System.nanoTime();
-        int[] sortedArrByMySelf = customSort(intArray2);
+        Integer[] sortedArrByMySelf = customSort(intArray2);
         duration = System.nanoTime() - before;
-        System.out.println("\nThe Result of customSort built in:\n"+ Arrays.toString(sortedArrByMySelf));
+        System.out.println("\nThe Result of customSort built in:\n" + Arrays.toString(sortedArrByMySelf));
         System.out.println("Duration of the Operation in microseconds: " + duration);
-        
+
     }
 
-    public static int[] customSort(int[] integerArray) {
+    public static Integer[] customSort(int[] integerArray) {
 
-        int[] sortedArray = new int[integerArray.length];
-        
-        for (int i = 0; i < integerArray.length; i++) {
-            
-            int[] slicedArray = getSlice(integerArray, i, integerArray.length);
-            int smallestIntInSlicedArr = customSearchSmallestInt(slicedArray);
-            
-            sortedArray[i] = smallestIntInSlicedArr;
+        ArrayList<Integer> sortedArrayList = new ArrayList<>();
+        ArrayList<Integer> origArrayList = new ArrayList<>();
+
+        for (int x : integerArray) {
+            origArrayList.add(x);
         }
-        return sortedArray;
-    }
 
-    public static int customSearchSmallestInt(int[] arr) {
+        while (!origArrayList.isEmpty()) {
 
-        int smallestInteger = arr[0];
+            int currentInteger = origArrayList.remove(0);
 
-        for (int zahl : arr) {
-            if (zahl < smallestInteger) {
-                smallestInteger = zahl;
+            if (!sortedArrayList.isEmpty() && currentInteger < sortedArrayList.get(sortedArrayList.size() - 1)) {
+                sortedArrayList.add(0, currentInteger);
+            } else {
+                sortedArrayList.add(currentInteger);
             }
         }
-        return smallestInteger;
-    }
-
-    public static int[] getSlice(int[] array, int startIndex, int endIndex) {
-  
-        int[] slicedArray = new int[endIndex - startIndex];
-
-        for (int i = 0; i < slicedArray.length; i++) {
-            slicedArray[i] = array[startIndex + i];
-        }
-
-        return slicedArray;
+        Integer[] sortedArray = new Integer[sortedArrayList.size()];
+        return sortedArrayList.toArray(sortedArray);
     }
 }
