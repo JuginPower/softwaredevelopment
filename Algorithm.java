@@ -5,8 +5,6 @@
 package com.mycompany.school.softwaredevelopment;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.ArrayList;
 
 /**
  *
@@ -29,33 +27,25 @@ public class Algorithm {
         System.out.println("Duration of the Operation in microseconds: " + duration);
 
         before = System.nanoTime();
-        Integer[] sortedArrByMySelf = customSort(intArray2);
+        int[] sortedArrByMySelf = customSort(intArray2);
         duration = System.nanoTime() - before;
         System.out.println("\nThe Result of customSort built in:\n" + Arrays.toString(sortedArrByMySelf));
         System.out.println("Duration of the Operation in microseconds: " + duration);
 
     }
 
-    public static Integer[] customSort(int[] integerArray) {
+    public static int[] customSort(int[] integerArray) {
 
-        ArrayList<Integer> sortedArrayList = new ArrayList<>();
-        ArrayList<Integer> origArrayList = new ArrayList<>();
-
-        for (int x : integerArray) {
-            origArrayList.add(x);
-        }
-
-        while (!origArrayList.isEmpty()) {
-
-            int currentInteger = origArrayList.remove(0);
-
-            if (!sortedArrayList.isEmpty() && currentInteger < sortedArrayList.get(sortedArrayList.size() - 1)) {
-                sortedArrayList.add(0, currentInteger);
-            } else {
-                sortedArrayList.add(currentInteger);
+        for (int i = 0; i < integerArray.length; i++) {
+            for (int j = i + 1; j < integerArray.length; j++) {
+                int tmp = 0;
+                if (integerArray[i] > integerArray[j]) {
+                    tmp = integerArray[i];
+                    integerArray[i] = integerArray[j];
+                    integerArray[j] = tmp;
+                }
             }
         }
-        Integer[] sortedArray = new Integer[sortedArrayList.size()];
-        return sortedArrayList.toArray(sortedArray);
+        return integerArray;
     }
 }
