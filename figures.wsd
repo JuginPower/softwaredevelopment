@@ -1,0 +1,6 @@
+@startuml figures
+abstract Figure{
+    +anzeigen()
+}
+
+@enduml
