@@ -1,6 +1,85 @@
 @startuml figures
-abstract Figure{
-    +anzeigen()
+class ArrayList {
+    kollektion: Figur[*]
++addFigur(figur: Figure): void
++alleFigurenAnzeigen(): Figur[*]
++ausgabeGesamtFlaecheFigur2D(): Double
++ausgabeGesamtVolumenFigur3D(): Double
 }
 
+abstract Figur {
+    
+}
+
+abstract Figur2D {
+    +getUmfang()
+    +getFlaeche()
+}
+
+abstract Figur3D {
+    +getVolumen()
+    +getOberflaeche()
+}
+
+class Kugel {
+    -radius: Double
++getVolumen(): Double
++getOberflaeche(): Double
+}
+
+class Pyramide {
+    -seiteA: Double
+    -seiteB: Double
+    -seiteC: Double
+    -seiteD: Double
+    -hoeheA: Double
+    -hoeheB: Double
+    -hoeheC: Double
+    -hoeheD: Double
++getVolumen(): Double
++getOberflaeche(): Double
+}
+
+class Zylinder {
+    -radius: Double
+    -hoehe: Double
++Zylinder(radius: Double, hoehe: Double)
++getVolumen(): Double
++getOberflaeche(): Double
+}
+
+class Dreieck {
+    -seiteA: Double
+    -seiteB: Double
+    -grundSeite: Double
+    -hoehe: Double
++Dreieck(seiteA: Double, seiteB: Double, grundSeite: Double)
++getUmfang(): Double
++getFlaeche(): Double
+}
+
+class Raute {
+    -seiteE: Double
+    -seiteF: Double
++Raute(seiteE: Double, seiteF:Double)
++getUmfang(): Double
++getFlaeche(): Double
+}
+
+class Quadrat {
+    -seiteA: Double
++Quadrat(seiteA: Double)
++getUmfang(): Double
++getFlaeche(): Double
+}
+
+ArrayList "0..1" o-- "1..*" Figur
+Figur <|-- Figur3D
+Figur <|-- Figur2D
+Figur2D <|-- Dreieck
+Figur2D <|-- Raute
+Figur2D <|-- Quadrat
+Figur3D <|-- Kugel
+Figur3D <|-- Pyramide
+Figur3D <|-- Zylinder
 @enduml
