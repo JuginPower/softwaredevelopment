@@ -1,4 +1,4 @@
-package softwaredevelopment;
+package figuren;
 
 public class Kugel extends Figur3D
 {

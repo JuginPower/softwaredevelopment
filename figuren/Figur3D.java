@@ -1,4 +1,4 @@
-package softwaredevelopment;
+package figuren;
 
 abstract class Figur3D extends Figur
 {

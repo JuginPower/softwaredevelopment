@@ -1,4 +1,4 @@
-package softwaredevelopment;
+package figuren;
 
 public class Quadrat extends Figur2D
 {

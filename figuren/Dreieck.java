@@ -1,4 +1,4 @@
-package softwaredevelopment;
+package figuren;
 
 
 public class Dreieck extends Figur2D
