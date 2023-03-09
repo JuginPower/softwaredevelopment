@@ -1,0 +1,22 @@
+@startuml person
+
+class Person {
+    -name: String
+    +Person(name:String)
+    +getName():String
+    +setName(name:String):void
+}
+
+class Kunde {
+    -name: String
+    -kundennr: int
+    +Kunde(name:String, kundennr:int)
+    +getName():String
+    +setName(name: String): void
+    +getKundennummer(): int
+    +setKundennummmer(): int
+}
+
+Person <|-- Kunde
+
+@enduml

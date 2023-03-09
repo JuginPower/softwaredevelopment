@@ -1,8 +1,8 @@
 @startuml figures
-class ArrayList {
+class Raum {
     kollektion: Figur[*]
 +addFigur(figur: Figure): void
-+alleFigurenAnzeigen(): Figur[*]
++alleFigurenAnzeigen(figur: Figur[*]): void
 +ausgabeGesamtFlaecheFigur2D(): Double
 +ausgabeGesamtVolumenFigur3D(): Double
 }
@@ -23,19 +23,6 @@ abstract Figur3D {
 
 class Kugel {
     -radius: Double
-+getVolumen(): Double
-+getOberflaeche(): Double
-}
-
-class Pyramide {
-    -seiteA: Double
-    -seiteB: Double
-    -seiteC: Double
-    -seiteD: Double
-    -hoeheA: Double
-    -hoeheB: Double
-    -hoeheC: Double
-    -hoeheD: Double
 +getVolumen(): Double
 +getOberflaeche(): Double
 }
@@ -81,6 +68,5 @@ Figur2D <|-- Dreieck
 Figur2D <|-- Raute
 Figur2D <|-- Quadrat
 Figur3D <|-- Kugel
-Figur3D <|-- Pyramide
 Figur3D <|-- Zylinder
 @enduml

@@ -1,14 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.mycompany.school.softwaredevelopment;
+package ArrayUebung;
 import java.util.Random;
 import java.util.ArrayList;
-/**
- *
- * @author eugen
- */
+
+
 public class Zeiterfassung {
     
     public static void main(String[] args) {
@@ -16,18 +10,23 @@ public class Zeiterfassung {
         Random rnd = new Random(3);
         ArrayList<Zeitstempel> zeitArray = new ArrayList<>();
         
-        for(int h=0; h<13; h++) {
+        for(int h=0; h<9; h++) {
             for(int m=0; m<60; m++) {
-                int zufallGruppe = rnd.nextInt(0, 60);
-                if(m==zufallGruppe) {
+                int zufallMinute = rnd.nextInt(0, 60);
+                if(m==zufallMinute) {
                     Zeitstempel zeitStempel = new Zeitstempel(h, m);
                     zeitArray.add(zeitStempel);
                 }
             }
         }
+
+        for (Zeitstempel zeit: zeitArray)
+        {
+            System.out.println(zeit.toString());
+        }
     }
     
-    public static Integer dauerLaengsteStosszeit(Zeitstempel[] zeitStempelArray) {
+    /* public static Integer dauerLaengsteStosszeit(Zeitstempel[] zeitStempelArray) {
         
         ArrayList<Integer> dauerStosszeiten = new ArrayList<>();
         int currentMinute = 0;
@@ -47,5 +46,5 @@ public class Zeiterfassung {
             }
         }
         return dauerStosszeiten.toArray();
-    }
+    } */
 }
