@@ -2,18 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package softwaredevelopment;
+package oldfiles;
 
 /**
  *
  * @author eugen
  */
-public abstract class Sonderbestellung implements Gericht{
+public interface Gericht {
     
-    public Gericht gericht;
-    
-    public Sonderbestellung(Gericht gericht) {
-        
-        this.gericht = gericht;
-    }
+    public String beschreibung();
 }

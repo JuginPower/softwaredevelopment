@@ -53,15 +53,16 @@ class Dreieck {
     -seiteB: Double
     -grundSeite: Double
     -hoehe: Double
-+Dreieck(seiteA: Double, seiteB: Double, grundSeite: Double)
++Dreieck(seiteA: Double, seiteB: Double, grundSeite: Double, hoehe: Double)
 +getUmfang(): Double
 +getFlaeche(): Double
 }
 
 class Raute {
+    -seiteA: Double
     -seiteE: Double
     -seiteF: Double
-+Raute(seiteE: Double, seiteF:Double)
++Raute(seiteA: Double, seiteE: Double, seiteF:Double)
 +getUmfang(): Double
 +getFlaeche(): Double
 }
