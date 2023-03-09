@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Blur",
+            "request": "launch",
+            "mainClass": "ArrayUebung.Blur",
+            "projectName": "softwaredevelopment_db38846f"
+        },
+        {
+            "type": "java",
+            "name": "Zeiterfassung",
+            "request": "launch",
+            "mainClass": "ArrayUebung.Zeiterfassung",
+            "projectName": "softwaredevelopment_db38846f"
+        },
+        {
+            "type": "java",
+            "name": "Restaurant",
+            "request": "launch",
+            "mainClass": "essen.Restaurant",
+            "projectName": "softwaredevelopment_db38846f"
+        },
+        {
+            "type": "java",
+            "name": "Raum",
+            "request": "launch",
+            "mainClass": "figuren.Raum",
+            "projectName": "softwaredevelopment_db38846f"
+        },
+        {
+            "type": "java",
+            "name": "Algorithm",
+            "request": "launch",
+            "mainClass": "oldfiles.Algorithm",
+            "projectName": "softwaredevelopment_db38846f"
+        },
+        {
+            "type": "java",
+            "name": "RekursionObject",
+            "request": "launch",
+            "mainClass": "oldfiles.RekursionObject",
+            "projectName": "softwaredevelopment_db38846f"
+        }
+    ]
+}
