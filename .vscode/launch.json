@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Raum",
+            "request": "launch",
+            "mainClass": "figuren.Raum",
+            "projectName": "softwaredevelopment_36ce4aa2"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

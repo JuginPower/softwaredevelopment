@@ -22,4 +22,10 @@ public class Raute extends Figur2D
     {
         return 0.5 * this.seiteE * this.seiteF;
     }
+
+    @Override
+    public String toString() {
+        return "Type = " + "Figur.Figur3D.Raute;\n" + this.toStringUmfangFlaeche()
+        + "Properties = [{double seiteE: " + this.seiteE + "} "+ "\n{double seiteF: " + this.seiteF;
+    }
 }

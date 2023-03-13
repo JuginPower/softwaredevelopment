@@ -2,29 +2,32 @@
 class Raum {
     kollektion: Figur[*]
 +addFigur(figur: Figure): void
-+alleFigurenAnzeigen(figur: Figur[*]): void
-+ausgabeGesamtFlaecheFigur2D(): Double
-+ausgabeGesamtVolumenFigur3D(): Double
++alleFigurenAnzeigen(figur: Figur[*]): String
++ausgabeGesamtFlaecheFigur2D(): String
++ausgabeGesamtVolumenFigur3D(): String
 }
 
 abstract Figur {
-    
+
 }
 
 abstract Figur2D {
-    +getUmfang()
-    +getFlaeche()
+    +getUmfang(): Double
+    +getFlaeche(): Double
+    #toStringUmfangFlaeche(): String
 }
 
 abstract Figur3D {
-    +getVolumen()
-    +getOberflaeche()
+    +getVolumen(): Double
+    +getOberflaeche(): Double
+    #toStringVolumenOberflaeche(): String
 }
 
 class Kugel {
     -radius: Double
 +getVolumen(): Double
 +getOberflaeche(): Double
++toString(): String
 }
 
 class Zylinder {
@@ -33,6 +36,7 @@ class Zylinder {
 +Zylinder(radius: Double, hoehe: Double)
 +getVolumen(): Double
 +getOberflaeche(): Double
++toString(): String
 }
 
 class Dreieck {
@@ -43,6 +47,7 @@ class Dreieck {
 +Dreieck(seiteA: Double, seiteB: Double, grundSeite: Double, hoehe: Double)
 +getUmfang(): Double
 +getFlaeche(): Double
++toString(): String
 }
 
 class Raute {
@@ -52,6 +57,7 @@ class Raute {
 +Raute(seiteA: Double, seiteE: Double, seiteF:Double)
 +getUmfang(): Double
 +getFlaeche(): Double
++toString(): String
 }
 
 class Quadrat {
@@ -59,6 +65,7 @@ class Quadrat {
 +Quadrat(seiteA: Double)
 +getUmfang(): Double
 +getFlaeche(): Double
++toString(): String
 }
 
 ArrayList "0..1" o-- "1..*" Figur

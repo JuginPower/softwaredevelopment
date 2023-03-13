@@ -22,7 +22,7 @@ public class Zeiterfassung {
 
         for (Zeitstempel zeit: zeitArray)
         {
-            System.out.println(zeit.toString());
+            System.out.print(zeit.toString());
         }
     }
     

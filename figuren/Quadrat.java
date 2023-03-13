@@ -18,4 +18,10 @@ public class Quadrat extends Figur2D
     {
         return this.seiteA * this.seiteA;
     }
+
+    @Override
+    public String toString() {
+        return "Type = " + "Figur.Figur2D.Quadrat;\n" + this.toStringUmfangFlaeche()
+        + "Properties = [{double seiteA: " + this.seiteA + "}];\n";
+    }
 }
