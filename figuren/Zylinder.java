@@ -13,11 +13,17 @@ public class Zylinder extends Figur3D
 
     public double getVolumen() 
     {
-        return Math.PI * Math.pow(this.radius, 2) * this.hoehe;
+        return reduceToTwoDecimalPlacesDouble(Math.PI * Math.pow(this.radius, 2) * this.hoehe);
     }
 
     public double getOberflaeche()
     {
-        return (2 * (Math.PI * Math.pow(this.radius, 2))) + (2 * Math.PI * this.radius * this.hoehe);
+        return reduceToTwoDecimalPlacesDouble((2 * (Math.PI * Math.pow(this.radius, 2))) + (2 * Math.PI * this.radius * this.hoehe));
+    }
+
+    @Override
+    public String toString() {
+        return "Type = " + "Figur.Figur3D.Zylinder;\n" + this.toStringVolumenOberflaeche()
+        + "Properties = [{double radius: " + this.radius + "},\n"+ "{double hoehe: " + this.hoehe + "}];\n";
     }
 }

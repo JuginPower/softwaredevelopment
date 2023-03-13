@@ -3,12 +3,12 @@ class Raum {
     kollektion: Figur[*]
 +addFigur(figur: Figure): void
 +alleFigurenAnzeigen(figur: Figur[*]): String
-+ausgabeGesamtFlaecheFigur2D(): String
-+ausgabeGesamtVolumenFigur3D(): String
++ausgabeGesamtFlaecheFigur2D(): Double
++ausgabeGesamtVolumenFigur3D(): Double
 }
 
 abstract Figur {
-
+    #reduceToTwoDecimalPlacesDouble(value: Double): Double
 }
 
 abstract Figur2D {
@@ -42,12 +42,12 @@ class Zylinder {
 class Dreieck {
     -seiteA: Double
     -seiteB: Double
-    -grundSeite: Double
-    -hoehe: Double
-+Dreieck(seiteA: Double, seiteB: Double, grundSeite: Double, hoehe: Double)
+    -seiteC: Double
++Dreieck(seiteA: Double, seiteB: Double, seiteC: Double)
 +getUmfang(): Double
 +getFlaeche(): Double
 +toString(): String
+-computeHoeheC(): Double
 }
 
 class Raute {
@@ -68,7 +68,7 @@ class Quadrat {
 +toString(): String
 }
 
-ArrayList "0..1" o-- "1..*" Figur
+Raum "0..1" o-- "1..*" Figur
 Figur <|-- Figur3D
 Figur <|-- Figur2D
 Figur2D <|-- Dreieck

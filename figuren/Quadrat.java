@@ -11,12 +11,12 @@ public class Quadrat extends Figur2D
 
     public double getUmfang() 
     {
-        return 4 * this.seiteA;    
+        return reduceToTwoDecimalPlacesDouble(4 * this.seiteA); 
     }
 
     public double getFlaeche() 
     {
-        return this.seiteA * this.seiteA;
+        return reduceToTwoDecimalPlacesDouble(this.seiteA * this.seiteA);
     }
 
     @Override

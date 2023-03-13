@@ -11,13 +11,13 @@ public class Kugel extends Figur3D
 
     public double getVolumen() 
     {
-        return 4 / 3 * Math.PI * Math.pow(this.radius, 3);
+        return this.reduceToTwoDecimalPlacesDouble(4 / 3 * Math.PI * Math.pow(this.radius, 3));
 
     }
 
     public double getOberflaeche()
     {
-        return 4 * Math.PI * Math.pow(this.radius, 2);
+        return this.reduceToTwoDecimalPlacesDouble(4 * Math.PI * Math.pow(this.radius, 2));
     }
 
     @Override

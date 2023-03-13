@@ -15,17 +15,18 @@ public class Raute extends Figur2D
 
     public double getUmfang()
     {
-        return 4 * this.seiteA;
+        return reduceToTwoDecimalPlacesDouble(4 * this.seiteA);
     }
 
     public double getFlaeche()
     {
-        return 0.5 * this.seiteE * this.seiteF;
+        return reduceToTwoDecimalPlacesDouble(0.5 * this.seiteE * this.seiteF);
     }
 
     @Override
     public String toString() {
         return "Type = " + "Figur.Figur3D.Raute;\n" + this.toStringUmfangFlaeche()
-        + "Properties = [{double seiteE: " + this.seiteE + "} "+ "\n{double seiteF: " + this.seiteF;
+        + "Properties = [{double seiteE: " + this.seiteE + "},\n"+ "{double seiteF: " + this.seiteF + "},\n"
+        + "{double seiteA: " + this.seiteA + "}];\n";
     }
 }
